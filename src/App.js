@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import blobb1 from "./components/images/graph (4).png"
 import blobb2 from "./components/images/graph (5).png"
 import React from 'react';
@@ -107,8 +107,9 @@ React.useEffect(
             <p>Answer the questions and test your knowledge</p>
             <div className="form">
             <div className="form-element">
-            <label htmlFor="category">Category:</label>
+            <label htmlFor="category">Category</label>
             <select name="category" id="category" value={selections.category} onChange={changeSelections}>
+          <optgroup>
             <option value="">Any Category</option>
             <option value="9">General Knowledge</option>
             <option value="10">Entertainment: Books</option>
@@ -134,10 +135,11 @@ React.useEffect(
             <option value="30">Science: Gadgets</option>
             <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
             <option value="32">Entertainment: Cartoon &amp; Animations</option>
+            </optgroup>
             </select>
             </div>
             <div className="form-element">
-                <label htmlFor="difficulty">Difficulty:</label>
+                <label htmlFor="difficulty">Difficulty</label>
                 <select name="difficulty" id="difficulty" value={selections.difficulty} onChange={changeSelections}>
                     <option value=''>Any Difficulty</option>
                     <option value="easy">Easy</option>
@@ -146,7 +148,7 @@ React.useEffect(
                 </select>
                 </div>
                 <div className="form-element">
-                <label htmlFor="type">Type of questions:</label>
+                <label htmlFor="type">Type of questions</label>
                 <select name="type" id="type" value={selections.type} onChange={changeSelections}>
                     <option value =''>Any Type</option>
                     <option value="multiple">Multiple Choice</option>
@@ -159,7 +161,7 @@ React.useEffect(
         <div className='app'>
         {questions.map((question)=>{
           return(
-            <div className="question">
+            <div key={question.id} className="question">
             <Question
               question={question.question}
               correctAnswer={question.correct_answer}
