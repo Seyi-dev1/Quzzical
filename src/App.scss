@@ -42,6 +42,9 @@ body{
   @media screen and (max-width:360px){
     padding-top: 6rem;
   }
+  @media screen and (max-height:736px){
+    padding-top: 8rem;
+  }
 }
 .home h1{
   font-family:'Pacifico', cursive;
@@ -193,12 +196,11 @@ body{
 }
 .app{
   height: 100vh;
-  margin-top: 5rem;
+  margin-top: 8rem;
 
-  @media screen and (max-width:450px){
-  //  overflow-y: scroll;
-  //  height: 80%;
-   }
+  @media screen and (max-height:736px){
+    margin-top: 8rem;
+  }
 }
 .question{
   justify-self: center;
@@ -210,6 +212,7 @@ body{
   width: 42rem;
   position: relative;
   justify-content: center;
+  z-index: 1;
   /* justify-items: center; */
 
   @media screen and (max-width:550px){
